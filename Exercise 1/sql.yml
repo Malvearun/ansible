@@ -1,0 +1,11 @@
+-
+            name: Deploy a web application
+            hosts: all
+            tasks:
+              - name: Install MySQL database
+                apt:
+                  name: "{{ item }}"
+                  state:  present
+                  with_items:
+                    - mysql-server
+                    - mysql-client
